@@ -5,14 +5,19 @@ class Login extends CI_Controller {
 
 	public function index($error = 0)
 	{
-        
-		$this->load->view('welcome_message');
+        $data['err'] = $error;
+        $data['title'] = 'Login';
+		$this->load->view('welcome_message'); // modifiena par vue hafa
 	}
 
-    public function add(){
+    public function inscription(){
+        $data['title'] = 'Inscription';
+    }
+
+    public function log(){
         if($this->input->post()){
             $this->form_validation->set_rules('nom','nom','required',array('required' => 'Ce champ doit-être rempli'));
-            $this->form_validation->set_rules('pwd','mot de passe','required|min_length[8]',array('required' => 'Ce champ doit-être rempli'));
+            $this->form_validation->set_rules('pwd','mot de passe','required',array('required' => 'Ce champ doit-être rempli'));
             if($this->form_validation->run() === FALSE){
                 $this->load->view('login');
             }else{

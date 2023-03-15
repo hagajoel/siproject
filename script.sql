@@ -9,7 +9,7 @@ CREATE TABLE entreprise(
     nom_entreprise VARCHAR(40) NOT NULL UNIQUE,
     pwd VARCHAR(30) NOT NULL,
     logo VARCHAR(255) DEFAULT 'default-entreprise-logo',
-    objet VARCHAR(100), NOT NULL,
+    objet VARCHAR(100) NOT NULL,
     date_debut DATE NOT NULL,
     adresse VARCHAR(75) NOT NULL,
     nif VARCHAR(20) NOT NULL,
@@ -20,7 +20,7 @@ CREATE TABLE entreprise(
 ); 
 
 CREATE TABLE devise_equivalence(
-    idEquivalence INTEGER PRIMARY AUTO_INCREMENT,
+    idEquivalence INTEGER PRIMARY KEY AUTO_INCREMENT,
     idEntreprise INTEGER,
     idDevise INTEGER,
     taux_de_change DOUBLE PRECISION NOT NULL,
@@ -28,4 +28,6 @@ CREATE TABLE devise_equivalence(
     FOREIGN KEY(idEntreprise) REFERENCES entreprise(idEntreprise)
 );
 
-INSERT INTO devise VALUES((1,'Ariary Malgache','MGA'),(2,'Livre Sterling','GBP'),(3,'Dollar Américain','USD'),(4,'Euro','EUR'));
+
+
+INSERT INTO devise VALUES(1,'Ariary Malgache','MGA'),(2,'Livre Sterling','GBP'),(3,'Dollar Américain','USD'),(4,'Euro','EUR');
