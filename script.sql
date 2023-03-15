@@ -20,6 +20,13 @@ CREATE TABLE entreprise(
     FOREIGN KEY(devise_tenue_compte) REFERENCES devise(idDevise)
 ); 
 
+CREATE TABLE parametre(
+    idParametre INTEGER PRIMARY KEY AUTO_INCREMENT,
+    idEntreprise INTEGER UNIQUE,
+    dec_virg INTEGER DEFAULT 2 NOT NULL,
+    long_compte INTEGER DEFAULT 5 NOT NULL
+);
+
 CREATE TABLE devise_equivalence(
     idEquivalence INTEGER PRIMARY KEY AUTO_INCREMENT,
     idEntreprise INTEGER,
