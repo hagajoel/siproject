@@ -1,6 +1,7 @@
 CREATE TABLE devise(
     idDevise INTEGER PRIMARY KEY,
-    nom_devise VARCHAR(20) NOT NULL
+    nom_devise VARCHAR(50) NOT NULL,
+    iso VARCHAR(4) NOT NULL
 );
 
 CREATE TABLE entreprise(
@@ -22,6 +23,9 @@ CREATE TABLE devise_equivalence(
     idEquivalence INTEGER PRIMARY AUTO_INCREMENT,
     idEntreprise INTEGER,
     idDevise INTEGER,
+    taux_de_change DOUBLE PRECISION NOT NULL,
     FOREIGN KEY(idDevise) REFERENCES devise(idDevise),
     FOREIGN KEY(idEntreprise) REFERENCES entreprise(idEntreprise)
 );
+
+INSERT INTO devise VALUES((1,'Ariary Malgache','MGA'),(2,'Livre Sterling','GBP'),(3,'Dollar Américain','USD'),(4,'Euro','EUR'));
