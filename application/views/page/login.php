@@ -1,11 +1,7 @@
-<?php
-    $this->load->view('template/header.php');
-?>
-
 <div class="container">
     <div class="box login_box">
         <h2>Log in</h2>
-        <form action="" method="post">
+        <form action="<?php site_url('login/log'); ?>" method="post">
             <input type="text" class="input" placeholder="Entrer le nom de votre société" name="nom" required="">
 
             <input type="password" class="input" name="pwd" required="" placeholder="Mot de passe">
@@ -18,15 +14,11 @@
     </div>
     <?php
         if (isset($err)) {
-            if ($err == 3) {?>
-                <div class="alert alert-danger">
-                    <p>Mot de passe invalide</p>
-                </div>
-            <?php }
+            if ($err == 3) { ?>
+    <div class="alert alert-danger">
+        <p>Mot de passe invalide</p>
+    </div>
+    <?php }
         }
     ?>
 </div>
-
-<?php
-    $this->load->view('template/ending.php');
-?>
