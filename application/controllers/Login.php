@@ -7,7 +7,7 @@ class Login extends CI_Controller {
 	{
         $data['err'] = $error;
         $data['title'] = 'Login';
-		$this->load->view('welcome_message'); // modifiena par vue hafa
+		$this->load->view('page/login');
 	}
 
     public function inscription(){
