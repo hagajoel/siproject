@@ -7,6 +7,8 @@
     --body-size: 15px;
     --white: #fff;
     --red: #bd3232;
+	--green: rgb(0, 150, 58);
+	--yellow: rgb(223, 223, 0);
 }
 
 *,::after,::before {
@@ -41,6 +43,7 @@ body {
     background-color: var(--white);
     padding: 25px;
     border-radius: 10px;
+	margin-bottom: 20px;
 }
 
 .alert {
@@ -143,10 +146,23 @@ input:focus {
     text-align: center;
     border: none;
     cursor: pointer;
-    width: 100%;
     margin: 12.5px 0;
     font-size: 13px;
     transition: all .3s ease-in-out;
+}
+
+.btn-icon {
+	width: 40px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.btn-action {
+	border-radius: 20px;
+	margin: 0 5px;
 }
 
 .btn-primary {
@@ -154,6 +170,27 @@ input:focus {
     color: var(--white);
     border: 1px solid var(--blue);
 	box-shadow: rgba(59,118,239,0.3) 0px 5px 10px 0px;
+}
+
+.btn-success {
+	background-color: var(--green);
+	color: var(--white);
+	border: 1px solid var(--green);
+	box-shadow: rgba(59, 239, 104, 0.3) 0px 5px 10px 0px;
+}
+
+.btn-danger {
+	background-color: var(--red);
+	color: var(--white);
+	border: 1px solid var(--red);
+	box-shadow: rgba(239, 59, 59, 0.3) 0px 5px 10px 0px;
+}
+
+.btn-warning {
+	background-color: var(--yellow);
+	color: var(--white);
+	border: 1px solid var(--yellow);
+	box-shadow: rgba(223, 223, 0, 0.407) 0 5px 10px 0px;
 }
 
 .btn-main {
@@ -265,6 +302,8 @@ input:focus {
 	margin-bottom: 25px;
 }
 
+/* PCG */
+
 .input-container input[type="file"] {
 	display: block;
 	width: 100%;
@@ -333,4 +372,28 @@ input:focus {
 .input_file {
 	cursor: pointer;
 	display: none;
+}
+
+table {
+	width: 100%;
+	border: none;
+	text-align: center;
+	border-collapse: collapse;
+}
+
+table thead tr th{
+	text-transform: uppercase;
+	border-bottom: 1px solid #676b847d;
+	padding: 10px;
+}
+
+table tbody tr td{
+	padding: 10px;
+	border-bottom: 1px solid #676b844c;
+}
+
+table tbody tr .action_col {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }

@@ -15,4 +15,42 @@
 				<p class="file_name">pgc.csv</p>
 			</div>
 		</div>
+		<div class="box">
+			<h2 class="page_title">Liste des comptes de gestion comptable:</h2>
+			<table>
+				<thead>
+					<tr role="row">
+						<th scope="col">Code</th>
+						<th scope="col">Intitulé</th>
+						<th scope="col">Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr role="row">
+						<td scope="col">0035</td>
+						<td scope="col">Stocks de produits</td>
+						<td scope="col" class="action_col">
+							<a href="#" class="btn btn-success btn-action">Edit</a>
+							<a href="#" class="btn btn-danger btn-action" >Delete</a>
+						</td>
+					</tr>
+					<tr role="row">
+						<td scope="col">0035</td>
+						<td scope="col">Stocks de produits</td>
+						<td scope="col" class="action_col">
+							<a href="#" class="btn btn-success btn-action">Edit</a>
+							<a href="#" class="btn btn-danger btn-action" >Delete</a>
+						</td>
+					</tr>
+					<tr role="row">
+						<td scope="col">0035</td>
+						<td scope="col">Stocks de produits</td>
+						<td scope="col" class="action_col">
+							<a href="#" class="btn btn-success btn-action">Edit</a>
+							<a href="#" class="btn btn-danger btn-action" >Delete</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</div>
