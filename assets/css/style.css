@@ -40,7 +40,7 @@ body {
 .box {
     background-color: var(--white);
     padding: 25px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .alert {
@@ -117,6 +117,7 @@ form {
     background-color: var(--blue);
     color: var(--white);
     border: 1px solid var(--blue);
+	box-shadow: rgba(59,118,239,0.3) 0px 5px 10px 0px;
 }
 
 .btn-primary:hover {
@@ -171,5 +172,35 @@ form {
 
 .main-page {
 	margin: 10px 0 0 250px;
-	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.search-bar {
+	background-color: var(--white);
+	padding: 10px 20px;
+	border-radius: 10px;
+	margin-bottom: 50px;
+}
+
+.search-bar .search {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.search-bar .search input {
+	border: none;
+	padding: 10px 20px;
+	font-family: 'Muli';
+	font-weight: bold;
+	font-size: 15px;
+	color: inherit;
+	margin-right: 5px;
+}
+
+.search-bar .search input:focus {
+	outline: none;
 }
