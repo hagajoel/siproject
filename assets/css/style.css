@@ -20,7 +20,7 @@ html {
 }
 
 body {
-    background-color: #f1f1f1;
+    background-color: #F7FAFF;
     color: var(--soft-violet);
     font-family: var(--body-size);
 }
@@ -30,6 +30,11 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.container-fluid {
+	display: flex;
+	flex-direction: row;
 }
 
 .box {
@@ -50,6 +55,9 @@ body {
     background-color: var(--red);
 }
 
+ul {
+	list-style-type: none;
+}
 
 .link {
     text-decoration: none;
@@ -118,5 +126,50 @@ form {
 }
 
 .sidebar {
+	height: 100%;
+	width: 250px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 10px 20px;
+}
+
+.sidebar .logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	background-color: #fff;
+	padding: 20px;
+}
+
+.sidebar .navlink {
+	margin-top: 20px;
+}
+
+.sidebar .navlink .nav_item{
+	display: flex;
+	align-items: center;
+	margin-top: 10px;
+	padding: 15px;
+	border-radius: 10px;
+	transition: all .2s ease-in-out;
+}
+
+.sidebar .navlink .nav_item:hover {
+	background-color: #fff;
+	cursor: pointer;
+}
+
+.sidebar .navlink .nav_item a{
+	text-decoration: none;
+	color: inherit;
+	margin-left: 20px;
+}
+
+/* Main Page */
+
+.main-page {
+	margin: 10px 0 0 250px;
 	
 }
