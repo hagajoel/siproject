@@ -1,6 +1,6 @@
 <div class="container">
     <div class="box login_box">
-        <h2>Log - in</h2>
+        <h2>Log in</h2>
         <?php
             if ($err == 3) { ?>
         <div class="alert alert-danger">
