@@ -9,7 +9,7 @@
 			</li>
 			<li class="nav_item">
 				<img src="<?php echo site_url('assets/img/2.svg');?>" alt="icon">
-				<a href="#">Journal</a>
+				<a href="<?php echo site_url('Journal');?>">Journal</a>
 			</li>
 			<li class="nav_item">
 				<img src="<?php echo site_url('assets/img/devise.svg');?>" alt="icon">
