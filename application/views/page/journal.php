@@ -20,4 +20,25 @@
 				<p class="file_name">journal.csv</p>
 			</div>
 	</div>
+	<div class="box">
+		<h2 class="page_title">Liste des journales</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Compte</th>
+					<th>Débit</th>
+					<th>Crédit</th>
+					<th>Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>0035</td>
+					<td>10 000 Ar</td>
+					<td>10 000 Ar</td>
+					<td>2023-03-01</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </div>
