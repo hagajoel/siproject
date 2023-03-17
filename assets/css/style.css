@@ -88,6 +88,30 @@ form {
     flex-direction: column;
 }
 
+.infobulle {
+	position: relative;
+	cursor: help;
+}
+
+.infobulle:hover::after,
+.infobulle:focus::after {
+	content: attr(aria-label);
+	position: absolute;
+	top: -2.4em;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1;
+	white-space: nowrap;
+	padding: 10px;
+	font-family: inherit;
+	background-color: var(--white);
+	border-radiu: 5px;
+}
+
+[aria-label]:focus {
+	outline: none;
+  }
+
 .input {
     padding: 10px 20px;
     border-radius: 3px;
@@ -125,6 +149,8 @@ form {
     background-color: var(--white);
     color: var(--blue);
 }
+
+/* Sidebar */
 
 .sidebar {
 	height: 100%;
@@ -168,14 +194,17 @@ form {
 	margin-left: 20px;
 }
 
+.footer {
+	height: 100px;
+
+}
+
 /* Main Page */
 
 .main-page {
 	margin: 10px 0 0 250px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	min-height: 100vh;
+	margin-bottom: -100px;
 }
 
 .search-bar {
@@ -183,6 +212,8 @@ form {
 	padding: 10px 20px;
 	border-radius: 10px;
 	margin-bottom: 50px;
+	width: 250px;
+	margin: auto;
 }
 
 .search-bar .search {
