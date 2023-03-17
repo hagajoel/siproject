@@ -5,7 +5,7 @@
 		<ul class="navlink">
 			<li class="nav_item">
 				<img src="<?php echo site_url('assets/img/1.svg');?>" alt="icon">
-				<a href="#">PCG</a>
+				<a href="<?php echo site_url('Pcg');?>">PCG</a>
 			</li>
 			<li class="nav_item">
 				<img src="<?php echo site_url('assets/img/2.svg');?>" alt="icon">

@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?php echo site_url("assets/fonts/muli/stylesheet.css");?>">
     <link rel="stylesheet" href="<?php echo site_url("assets/css/style.css");?>">
-	<script defer src="<?php echo site_url('assets/js/metismenu.js');?>"></script>
-    <title><?php $title; ?></title>
+    <title><?php echo $title; ?></title>
 </head>
 <body>
 
