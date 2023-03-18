@@ -1,6 +1,3 @@
-<?php 
-    echo $err;
-?>
 <link rel="stylesheet" href="<?php echo base_url('assets/css/error.css'); ?>">
 <?php $this->load->view('components/sidebar.php');?>
 <div class="main-page">
@@ -43,7 +40,8 @@
                     <td scope="col"><?php echo $p['intitule']; ?></td>
                     <td scope="col" class="action_col">
                         <a href="#?id=<?php echo $p['idPcg']; ?>" class="btn btn-success btn-action">Edit</a>
-                        <a href="#?id=<?php echo $p['idPcg']; ?>" class="btn btn-danger btn-action">Delete</a>
+                        <a href="<?php echo site_url('pcg/delete/' . $p['idPcg']); ?>"
+                            class="btn btn-danger btn-action">Delete</a>
                     </td>
                 </tr>
                 <?php } ?>

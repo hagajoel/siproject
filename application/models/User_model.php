@@ -31,5 +31,9 @@
             }
             return 0;
         }
+
+        public function delete($id){
+            $this->db->query("DELETE FROM pcg WHERE idPcg = " . $id);
+        }
     }
 ?>

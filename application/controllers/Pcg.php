@@ -46,5 +46,10 @@
 			$ret = $this->user_model->importPcgScv($_FILES['csv']['tmp_name'],$_SESSION['id_entreprise']);
 			redirect(site_url('pcg/index/' . $ret));
 		}
+
+		public function delete($id){
+			$this->user_model->delete($id);
+			redirect(site_url('pcg'));
+		}
 	}
 ?>
