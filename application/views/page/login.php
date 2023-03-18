@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="<?php echo base_url("assets/css/error.css"); ?>">
 <div class="container">
     <div class="box login_box">
         <h2>Log in</h2>
@@ -9,11 +10,11 @@
         <?php
             }
         ?>
-        <form action="<?php echo site_url('login'); ?>" method="post">
-            <p><?php echo form_error('nom'); ?></p>
-            <input type="text" class="input" placeholder="Entrer le nom de votre société" name="nom">
-            <p><?php echo form_error('pwd'); ?></p>
+        <form action="<?php echo site_url('login/sign_in'); ?>" method="post">
+            <input type="text" class="input" placeholder="Entrer le nom de votre société" name="nom" autocomplete="off">
+            <span><?php echo form_error('nom'); ?></span>
             <input type="password" class="input" name="pwd" placeholder="Mot de passe">
+            <span><?php echo form_error('pwd'); ?></span>
             <input type="submit" value="Se connecter" class="btn btn-primary">
         </form>
         <div class="links">

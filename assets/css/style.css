@@ -5,8 +5,8 @@
     --soft-violet:#676b84;
     --violet: #3b5998;
     --body-size: 15px;
-    --white: #fff;
-    --red: #bd3232;
+    --white: #ffffff;
+    --red: #ca4343;
 	--green: rgb(0, 150, 58);
 	--yellow: rgb(223, 223, 0);
 }
@@ -16,6 +16,7 @@
     margin: 0;
     padding: 0;
 }
+
 
 html {
     box-sizing: inherit;
@@ -130,11 +131,9 @@ form {
 	border-radius: 10px;
 	width: 100%;
 	margin-top: 20px;
+	background-color: #f7faff;
 }
 
-.input:focus {
-	background-color: #F7FAFF;
-}
 
 input:focus {
     outline: none;
@@ -293,6 +292,8 @@ input:focus {
 	font-size: 15px;
 	color: inherit;
 	margin-right: 5px;
+	background-color: #F7FAFF;
+	border-radius: 10px;
 }
 
 .search-bar .search input:focus {
@@ -397,4 +398,17 @@ table tbody tr .action_col {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.empty{
+	color: red;
+}
+
+.import-link{
+	border: none;
+	text-decoration: none;
+	padding: 4px 4px;
+	border-radius: 5px;
+	background-color: #a5adc6;
+	color: white;
 }
