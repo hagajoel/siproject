@@ -31,6 +31,7 @@
 						$this->load->view('page/pcg',$data);	
 					}else{
 						$this->user_model->insertPcg($num,trim($intitule),$_SESSION['id_entreprise']);
+						header("Refresh:0");
 						$this->load->view('page/pcg');	
 					}
 				}

@@ -7,7 +7,7 @@
         }
 
         public function getPcg($id){
-            $query = $this->db->query("SELECT * FROM pcg where idEntreprise = " . $id);
+            $query = $this->db->query("SELECT * FROM pcg where idEntreprise = " . $id . " ORDER BY compte");
             $res = $query->result_array();
             return $res;
         }
