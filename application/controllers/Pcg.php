@@ -51,5 +51,9 @@
 			$this->user_model->delete($id);
 			redirect(site_url('pcg'));
 		}
+
+		public function search(){
+			var_dump($this->user_model->res_search($_GET['search'])); 
+		}
 	}
 ?>

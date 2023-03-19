@@ -35,5 +35,11 @@
         public function delete($id){
             $this->db->query("DELETE FROM pcg WHERE idPcg = " . $id);
         }
+
+        public function res_search($params){
+            $sql = "select * from pcg where compte like '%$params%' OR intitule like '%$params%'";
+            $query = $this->db->query($sql);
+            return $query->result_array();
+        }
     }
 ?>
