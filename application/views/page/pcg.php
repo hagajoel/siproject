@@ -35,13 +35,13 @@
             <tbody>
                 <?php 
 					foreach ($pcg as $p) { ?>
-                <tr role="row">
-                    <td scope="col"><?php echo $p['compte']; ?></td>
+                <tr role="row" id="<?php echo 'row'.$p['idPcg'] ;?>">
+                    <td scope=" col"><?php echo $p['compte']; ?></td>
                     <td scope="col"><?php echo $p['intitule']; ?></td>
                     <td scope="col" class="action_col">
                         <a href="#?id=<?php echo $p['idPcg']; ?>" class="btn btn-success btn-action">Edit</a>
-                        <a href="<?php echo site_url('pcg/delete/' . $p['idPcg']); ?>"
-                            class="btn btn-danger btn-action">Delete</a>
+                        <button id="<?php echo $p['idPcg']; ?>"
+                            class="btn btn-danger btn-action del-link">Delete</button>
                     </td>
                 </tr>
                 <?php } ?>
@@ -49,3 +49,4 @@
         </table>
     </div>
 </div>
+<script src="<?php echo base_url('assets/js/delete.js'); ?>"></script>

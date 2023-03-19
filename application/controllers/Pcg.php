@@ -49,11 +49,16 @@
 
 		public function delete($id){
 			$this->user_model->delete($id);
-			redirect(site_url('pcg'));
+			// redirect(site_url('pcg'));
+			echo "haha";
 		}
 
 		public function search(){
 			var_dump($this->user_model->res_search($_GET['search'])); 
+		}
+
+		public function modif(){
+			$this->user_model->modif($id,$_POST['compte'],$_POST['intitule']);
 		}
 	}
 ?>
