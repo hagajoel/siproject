@@ -26,13 +26,18 @@
 						$data['num'] = 2;
 						$this->load->view('page/pcg',$data);	
 					}
-					if(strlen(trim($num)) < 5){
+					else if(strlen(trim($num)) < 5){
 						$data['num'] = 1;
 						$this->load->view('page/pcg',$data);	
 					}else{
-						$this->user_model->insertPcg($num,trim($intitule),$_SESSION['id_entreprise']);
-						header("Refresh:0");
-						$this->load->view('page/pcg');	
+						$a = $this->user_model->insertPcg($num,trim($intitule),$_SESSION['id_entreprise']);
+						if($a == -1){
+							$dat['contains'] = $_POST['numero'];
+							$this->load->view('page/pcg',$dat);	
+						}else{
+							header("Refresh:0");
+							$this->load->view('page/pcg');	
+						}
 					}
 				}
 			}else{

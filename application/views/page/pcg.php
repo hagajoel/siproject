@@ -6,6 +6,16 @@
     <div class="box">
         <h3>Insérer un plan comptable de gestion</h3>
         <form action="<?php echo site_url('/pcg'); ?>" method="post">
+            <?php 
+                if(isset($num)){ ?>
+            <span>Code incorrect</span>
+            <?php
+                }
+            ?>
+            <?php 
+                if(isset($contains)){ ?>
+            <span>Le compte <?php echo $contains; ?> existe déjà.</span>
+            <?php } ?>
             <input type="text" class="input" name="numero" placeholder="ex: 35000">
             <span><?php echo form_error('numero'); ?></span>
             <input type="text" class="input" name="intitule" placeholder="ex: Stocks de produits">

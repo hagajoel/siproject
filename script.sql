@@ -41,3 +41,11 @@ CREATE TABLE pcg(
     intitule VARCHAR(75) NOT NULL,
     FOREIGN KEY(idEntreprise) REFERENCES entreprise(idEntreprise)
 );
+
+CREATE TABLE tiers(
+    idTiers SERIAL PRIMARY KEY,
+    idEntreprise INTEGER,
+    types VARCHAR(2) NOT NULL,
+    numero VARCHAR(30) NOT NULL,
+    FOREIGN KEY(idEntreprise) REFERENCES entreprise(idEntreprise)
+);

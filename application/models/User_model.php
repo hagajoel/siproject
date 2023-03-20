@@ -1,10 +1,11 @@
 <?php 
     class User_model extends CI_Model {
-        public function insertPcg($num,$intitule,$id){
-            $sql = "insert into pcg values(default,%s,%s,%s)";
-            $sql = sprintf($sql, $id, $this->db->escape($num), $this->db->escape($intitule));
-            $this->db->query($sql);
-        }
+        
+        public function __construct()
+		{
+			parent::__construct();
+            $this->load->helper('pcg_helper');
+		}
 
         public function getPcg($id){
             $query = $this->db->query("SELECT * FROM pcg where idEntreprise = " . $id . " ORDER BY compte");
@@ -12,8 +13,22 @@
             return $res;
         }
 
+        public function insertPcg($num,$intitule,$id){
+            $pcg = $this->getPcg($id);
+            foreach ($pcg as $p) {
+                if($p['compte'] == $num){
+                    return -1;
+                }
+            }
+            $sql = "insert into pcg values(default,%s,%s,%s)";
+            $sql = sprintf($sql, $id, $this->db->escape($num), $this->db->escape($intitule));
+            $this->db->query($sql);
+            return 0;
+        }
+
         public function importPcgScv($url,$id){
             $handle = fopen($url, "r");
+            $ar = array();
             if ($handle) {
                 while (($line = fgets($handle)) !== false) {
                     $var = explode(";",$line);
@@ -23,13 +38,20 @@
                     if(!is_numeric($var[0])){
                         return -1;
                     }
+                    array_push($ar,$var);
+                }
+                fclose($handle);
+            }
+            $pcg = $this->getPcg($id);
+            $check = checkPcg($pcg,$ar);
+            foreach ($ar as $var) {
+                if(!in_array($var,$check)){
                     $sql = "INSERT INTO pcg VALUES(default, %s, %s, %s)";
                     $sql = sprintf($sql, $id,$var[0],$this->db->escape($var[1]));
                     $this->db->query($sql);
                 }
-                fclose($handle);
             }
-            return 0;
+            return $check;
         }
 
         public function delete($id){
