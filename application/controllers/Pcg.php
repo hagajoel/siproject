@@ -38,6 +38,7 @@
 			}else{
 				$this->load->view('page/pcg');
 			}
+			$this->load->view('components/footer');
 			$this->load->view('template/ending');
 		}
 
@@ -50,7 +51,6 @@
 		public function delete($id){
 			$this->user_model->delete($id);
 			// redirect(site_url('pcg'));
-			echo "haha";
 		}
 
 		public function search(){
