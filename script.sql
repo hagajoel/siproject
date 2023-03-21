@@ -16,7 +16,8 @@ CREATE TABLE entreprise(
     nif VARCHAR(20) NOT NULL,
     stat VARCHAR(25) NOT NULL,
     rcs VARCHAR(25) NOT NULL,
-    devise_tenue_compte INTEGER,
+    devise_tenue_compte INTEGER NOT NULL,
+    dirigeant VARCHAR(40) DEFAULT '-',
     FOREIGN KEY(devise_tenue_compte) REFERENCES devise(idDevise)
 ); 
 
