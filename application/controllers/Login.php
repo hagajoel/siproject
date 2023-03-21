@@ -43,17 +43,11 @@ class Login extends CI_Controller {
         $data['title'] = 'Inscription';
         $this->load->view('page/add');
         if ($this->input->post()) {
-            $ar = ['nom','pwd','objet',''];
-            $this->form_validation->set_rules('nom','nom','required',array('required' => 'Ce champ doit-être rempli'));
-            $this->form_validation->set_rules('pwd','password','required',array('required' => 'Ce champ doit-être rempli'));
-            $this->form_validation->set_rules('objet','objet','required',array('required' => 'Ce champ doit-être rempli'));
-            $this->form_validation->set_rules('adresse','adresse','required',array('required' => 'Ce champ doit-être rempli'));
-            $this->form_validation->set_rules('nif','nif','required',array('required' => 'Ce champ doit-être rempli'));
-            $this->form_validation->set_rules('stat','stat','required',array('required' => 'Ce champ doit-être rempli'));
-            $this->form_validation->set_rules('rcs','rcs','required',array('required' => 'Ce champ doit-être rempli'));
-            $this->form_validation->set_rules('debut','date de debut','required',array('required' => 'Ce champ doit-être rempli'));
+            $ar = ['nom','pwd','objet','adresse','nif','stat','rcs','debut','devise'];
+            for ($i=0; $i < count($ar) - 1; $i++) {
+                $this->form_validation->set_rules($ar[$i],$ar[$i],'required',array('required' => 'Ce champ doit-être rempli'));
+            }
             $this->form_validation->set_rules('devise','devise','required',array('required' => 'Vous devez sélectionner une devise'));
-            
         }
     }
 }
