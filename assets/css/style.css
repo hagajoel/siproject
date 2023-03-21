@@ -135,6 +135,13 @@ form {
 	background-color: #f7faff;
 }
 
+.input_float {
+	margin: 10px 0;
+}
+
+.input_float .input {
+	margin: 5px 0;
+}
 
 input:focus {
     outline: none;
@@ -456,3 +463,5 @@ table tbody tr .action_col {
 	background-color: #a5adc6;
 	color: white;
 }
+
+/* Sign in */

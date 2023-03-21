@@ -32,5 +32,5 @@
 		<div  style="background-image:url(<?php echo site_url('assets/img/default_company.png');?>)" class="img img-sm"></div>
 		<p class="name">DIMPEX</p>
 	</div>
-	<a href="#" class="btn btn-secondary-danger logout">Se déconnecter</a>
+	<a href="<?php echo site_url('Login')?>" class="btn btn-secondary-danger logout">Se déconnecter</a>
 </nav>
