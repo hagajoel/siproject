@@ -49,13 +49,22 @@
 
 		public function pcgCsv(){
 			session_start();
-			$ret = $this->user_model->importPcgScv($_FILES['csv']['tmp_name'],$_SESSION['id_entreprise']);
-			redirect(site_url('pcg/index/' . $ret));
+			$path_parts = pathinfo($_FILES["csv"]["name"]);
+			$extension = $path_parts['extension'];
+			if($_FILES['csv']['tmp_name'] == '' || $_FILES['csv']['tmp_name'] == NULL){
+				redirect(site_url('pcg/index/69'));
+			}
+			if(strtolower($extension) != "csv"){
+				redirect(site_url('pcg/index/96'));
+			}else{
+				$ret = $this->user_model->importPcgScv($_FILES['csv']['tmp_name'],$_SESSION['id_entreprise']);
+				redirect(site_url('pcg/index/' . $ret));
+			}
 		}
 
 		public function delete($id){
 			$this->user_model->delete($id);
-			// redirect(site_url('pcg'));
+			redirect(site_url('pcg'));
 		}
 
 		public function search(){

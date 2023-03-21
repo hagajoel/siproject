@@ -36,7 +36,7 @@
                         return -1;
                     }
                     if(!is_numeric($var[0])){
-                        return -1;
+                        return -2;
                     }
                     array_push($ar,$var);
                 }

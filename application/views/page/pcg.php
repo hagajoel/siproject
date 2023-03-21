@@ -23,9 +23,24 @@
             <input type="submit" class="btn btn-primary" value="Insérer">
         </form>
         <div class="upload_container">
+            <?php 
+                if($err == 69){ ?>
+            <span>Veuillez choisir un fichier csv à importer.</span>
+            <?php }
+                if($err == 96){ ?>
+            <span>Le fichier n'est pas de type .csv</span>
+            <?php }
+                if($err == -1){ ?>
+            <span>Le fichier csv n'est pas accepté, importer un fichier avec les colonnes :
+                numero_de_compte;intitule</span>
+            <?php }
+            if($err == -2){ ?>
+            <span>Le numéro de compte doit-être un format numérique.</span>
+            <?php }
+            ?>
             <form action="<?php echo site_url('pcg/pcgCsv'); ?>" method="post" enctype="multipart/form-data">
                 <label for="file"> <img src="<?php echo site_url('assets/img/file-arrow-down-solid.svg');?>" alt="">
-                    Import
+                    Importer
                     un fichier CSV</label>
                 <input type="file" id="file" class="input_file" name="csv">
                 <input class="import-link" type="submit" value="Click here to Import">
