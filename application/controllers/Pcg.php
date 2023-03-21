@@ -68,7 +68,12 @@
 		}
 
 		public function search(){
-			var_dump($this->user_model->res_search($_GET['search'])); 
+			$data['pcg'] = $this->user_model->res_search($_GET['search']); 
+			$data['title'] = "Résultat recherche";
+			$this->load->view('template/header',$data);
+			$this->load->view('page/recherche');
+			$this->load->view('components/footer');
+			$this->load->view('template/ending');
 		}
 
 		public function modif(){

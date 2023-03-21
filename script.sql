@@ -16,12 +16,13 @@ CREATE TABLE entreprise(
     nif VARCHAR(20) NOT NULL,
     stat VARCHAR(25) NOT NULL,
     rcs VARCHAR(25) NOT NULL,
-    devise_tenue_compte INTEGER,
+    devise_tenue_compte INTEGER NOT NULL,
+    dirigeant VARCHAR(40) DEFAULT '-',
     FOREIGN KEY(devise_tenue_compte) REFERENCES devise(idDevise)
 );
 
 
--- INSERT INTO entreprise VALUES(null, 'DIMPEX', 'individuel', 0, null, 'Production d\'articles industriels et la vente de marchandises auprès de ces clients locaux et étrangers','2023/01/01','ENCEINTE ITU ANDOHARANOFOTSY BP 1960 Antananarivo 101','00000','00000','00000',1);
+-- INSERT INTO entreprise VALUES(null, 'DIMPEX', 'individuel', 0, null, 'Production d\'articles industriels et la vente de marchandises auprès de ces clients locaux et étrangers','2023/01/01','ENCEINTE ITU ANDOHARANOFOTSY BP 1960 Antananarivo 101','00000','00000','00000',1,'Boss');
 
 CREATE TABLE devise_equivalence(
     idEquivalence INTEGER PRIMARY KEY AUTO_INCREMENT,

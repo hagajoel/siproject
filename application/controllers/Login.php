@@ -13,7 +13,7 @@ class Login extends CI_Controller {
     }
 
 	public function sign_in($error = 0)
-	{
+	{   
         session_start();
         $data['err'] = $error;
         $data['title'] = 'Login';
@@ -42,6 +42,12 @@ class Login extends CI_Controller {
     public function inscription(){
         $data['title'] = 'Inscription';
         $this->load->view('page/add');
-
+        if ($this->input->post()) {
+            $ar = ['nom','pwd','objet','adresse','nif','stat','rcs','debut','devise'];
+            for ($i=0; $i < count($ar) - 1; $i++) {
+                $this->form_validation->set_rules($ar[$i],$ar[$i],'required',array('required' => 'Ce champ doit-être rempli'));
+            }
+            $this->form_validation->set_rules('devise','devise','required',array('required' => 'Vous devez sélectionner une devise'));
+        }
     }
 }

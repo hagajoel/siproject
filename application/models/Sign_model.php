@@ -15,5 +15,10 @@
             $_SESSION['nom'] = $row['nom_entreprise'];
             return 0;
         }
+
+        public function insert(){
+            
+        }
+
     }
 ?>
