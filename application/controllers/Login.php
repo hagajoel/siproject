@@ -43,11 +43,12 @@ class Login extends CI_Controller {
         $data['title'] = 'Inscription';
         $this->load->view('page/add');
         if ($this->input->post()) {
-            $ar = ['nom','pwd','objet','adresse','nif','stat','rcs','debut','devise'];
-            for ($i=0; $i < count($ar) - 1; $i++) {
+            $ar = ['nom','pwd','objet','adresse','nif','stat','rcs','debut','devise','logo'];
+            for ($i=0; $i < count($ar) - 2; $i++) {
                 $this->form_validation->set_rules($ar[$i],$ar[$i],'required',array('required' => 'Ce champ doit-être rempli'));
             }
             $this->form_validation->set_rules('devise','devise','required',array('required' => 'Vous devez sélectionner une devise'));
+            
         }
     }
 }

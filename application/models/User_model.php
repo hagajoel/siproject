@@ -63,5 +63,11 @@
             $query = $this->db->query($sql);
             return $query->result_array();
         }
+
+        public function findPcg($id){
+            $sql = "select * from pcg where idPcg = $id";
+            $query = $this->db->query($sql);
+            return $query->result_array();
+		}
     }
 ?>
