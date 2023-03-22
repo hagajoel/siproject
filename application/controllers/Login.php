@@ -13,7 +13,7 @@ class Login extends CI_Controller {
     }
 
 	public function sign_in($error = 0)
-	{   
+	{
         session_start();
         $data['err'] = $error;
         $data['title'] = 'Login';
@@ -41,7 +41,10 @@ class Login extends CI_Controller {
 
     public function inscription(){
         $data['title'] = 'Inscription';
+
+        $this->load->view('template/header');
         $this->load->view('page/add');
+        $this->load->view('template/ending');
         if ($this->input->post()) {
             $ar = ['nom','pwd','objet','adresse','nif','stat','rcs','debut','devise','logo'];
             for ($i=0; $i < count($ar) - 2; $i++) {

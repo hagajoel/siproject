@@ -6,6 +6,7 @@
     --violet: #3b5998;
     --body-size: 15px;
     --white: #ffffff;
+	--grey: #f7faff;
     --red: #ca4343;
 	--green: rgb(0, 150, 58);
 	--yellow: rgb(223, 223, 0);
@@ -134,6 +135,13 @@ form {
 	background-color: #f7faff;
 }
 
+.input_float {
+	margin: 10px 0;
+}
+
+.input_float .input {
+	margin: 5px 0;
+}
 
 input:focus {
     outline: none;
@@ -186,6 +194,17 @@ input:focus {
 	box-shadow: rgba(239, 59, 59, 0.3) 0px 5px 10px 0px;
 }
 
+.btn-secondary-danger {
+	border: 1px solid var(--red);
+	color: var(--red);
+	transition: all .3s ease-in-out;
+}
+
+.btn-secondary-danger:hover{
+	background-color: var(--red);
+	color: var(--white);
+}
+
 .btn-warning {
 	background-color: var(--yellow);
 	color: var(--white);
@@ -209,6 +228,10 @@ input:focus {
     border: 1px solid var(--blue);
     background-color: var(--white);
     color: var(--blue);
+}
+
+.logout {
+	width: 100%;
 }
 
 /* Sidebar */
@@ -254,6 +277,33 @@ input:focus {
 	text-decoration: none;
 	color: inherit;
 	margin-left: 20px;
+}
+
+.profil_user {
+	padding: 10px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin: 20px 0;
+	border-radius: 15px;
+	transition: all .3s ease-in;
+	cursor: pointer;
+}
+
+.profil_user:hover {
+	background-color: var(--white);
+}
+
+.img {
+	background-position: center;
+	background-size: contain;
+	background-color: var(--grey);
+	border-radius: 100%;
+}
+
+.img-sm {
+	height: 50px;
+	width: 50px;
 }
 
 .footer {
@@ -413,3 +463,5 @@ table tbody tr .action_col {
 	background-color: #a5adc6;
 	color: white;
 }
+
+/* Sign in */
